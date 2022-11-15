@@ -1,0 +1,128 @@
+\usepackage{lastpage}
+\usepackage{tabularx}
+\usepackage{cprotect}
+%Seitenränder definieren
+\usepackage[right=4.0cm,left=3.3cm, bottom=3.9cm, top=4.1cm, footskip=2.1cm, headsep=2.0cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{palatino}
+\linespread{1.25}
+\usepackage{microtype}
+\usepackage[english]{babel}
+%More citations
+\usepackage{natbib}
+%better urls mit \url{}
+\usepackage[hyphens]{url}
+\usepackage{lastpage}
+%code
+\usepackage{listings}
+
+%more colors
+\usepackage{soul}
+
+%Force figure to be placed “HERE”
+\usepackage{float} 
+
+%folgende Zeilen sind für Kapitelüberschriften
+\usepackage[rigidchapters]{titlesec}
+\usepackage{blindtext}
+\titleformat{\chapter}
+{\normalfont\LARGE}
+{\makebox[3pc][l]{\LARGE\thechapter\hfil\rule[-6pt]{0.5pt}{2pc}}}
+{0pt}
+{\LARGE}
+\titlespacing*{\chapter}{0pt}{0pt}{82pt}
+
+%Csv -> Latex
+\usepackage{csvsimple}
+
+%Für Graphiken 
+\usepackage{tikz}
+\usetikzlibrary{plotmarks}
+\usetikzlibrary{positioning,shapes,shadows,arrows}
+\usepackage{graphicx}
+
+%Paket gibt einige Optionen mehr bei Tabellen (wird eher nicht verwendet)
+\usepackage{array}
+
+%\usepackage{stdpage}
+%test wegen anzahl zeilen pro seite
+%Paket für Zeilenabstände
+\usepackage{setspace}
+%\onehalfspacing
+\usepackage{multirow}
+%Paket gibt mehr Kontrolle über die Captions (Bildunterschriften) bei Abbildungen
+\usepackage[labelfont=bf,format=hang,font=footnotesize,justification=raggedright,singlelinecheck=false]{caption}
+
+%Helvetia (Arial) Verwenden WICHTIG: Beide folgenden Zeilen kopieren!
+%\usepackage[scaled]{helvet} %
+%\renewcommand*\familydefault{\sfdefault} %%
+
+% Abschalten des Einrückens bei neuen Absätzen (manuell, nach Tabellen, Abbildungen, etc.)
+\setlength{\parindent}{0pt}
+\hyphenation{}
+
+% New Page before section
+\newcommand{\sectionbreak}{\clearpage}
+
+\usepackage{color}
+\usepackage{lstautogobble}  % Fix relative indenting
+\usepackage{zi4}  
+
+\definecolor{color0}{rgb}{0,0,0}% black
+\definecolor{color1}{rgb}{0.22,0.45,0.70}% light blue
+\definecolor{color2}{rgb}{0.45,0.45,0.45}% dark grey
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{myblue}{RGB}{40,58,93}
+\definecolor{codebackground}{RGB}{221, 222, 223}
+\definecolor{codechanged}{rgb}{0.8, 0.0, 0.0}
+
+
+\definecolor{bluekeywords}{rgb}{0.13, 0.13, 1}
+\definecolor{greencomments}{rgb}{0, 0.5, 0}
+\definecolor{redstrings}{rgb}{0.9, 0, 0}
+\definecolor{graynumbers}{rgb}{0.5, 0.5, 0.5}
+    
+\lstset{
+    autogobble,
+    columns=fullflexible,
+    showspaces=false,
+    showtabs=false,
+    breaklines=true,
+    showstringspaces=false,
+    breakatwhitespace=true,
+    commentstyle=\color{greencomments},
+    keywordstyle=\color{bluekeywords},
+    stringstyle=\color{redstrings},
+    numberstyle=\color{graynumbers},
+    basicstyle=\ttfamily\footnotesize,
+    frame=l,
+    framesep=12pt,
+    xleftmargin=12pt,
+    tabsize=4,
+    captionpos=b
+}
+
+%Aktives Inhaltsverzeichnis und links
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancypagestyle{plain}{}
+\fancyhf{}
+\fancyfoot{} % clear all footer fields
+
+\fancyhead[R]{\small{\leftmark}}
+\fancyhead[L]{\small{Offensive Security - Penetration Test Report}}
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+
+\renewcommand{\footrulewidth}{0.1pt} % Create a rule above the page number
+\fancyfoot[R]{\textcolor{color1}\thepage  \textcolor{color2}{/\pageref{LastPage}}}
